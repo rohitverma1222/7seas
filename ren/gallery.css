@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Sen&display=swap');
+*,
+*::after,
+*::before{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.footer
+{
+	padding: 50px 50px 10px;
+	background: rgb(255,0,0);
+background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(0,14,255,1) 100%);
+	color:white;
+
+}
+.footer-logo
+{
+	width: 150px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.footer h4
+{
+	text-align: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+}
+.footer p
+{
+	font-size: 12px;
+	text-align: justify;
+	padding-right: 35px;
+}
+.footer .row .fa
+{
+	padding-right: 20px;
+	font-size: 15px;
+}
+.footer hr
+{
+	margin-top:10px;
+	background:#efefef;
+}
+.fa-heart
+{
+	margin: 0 5px;
+	color:#f44336;
+}
+.footer .copyright
+{
+	text-align: center;
+}
+.col-md-3 a
+{
+	text-decoration: none;
+	color:white;
+}
+.gallery
+{
+	padding: 50px 0px;
+}
+.gallery h1
+{
+	text-align: center;
+	padding-bottom: 30px;
+	font-size: 55px;
+}
+.div1
+{
+	width: 80%;
+	height: 700px;
+	position: relative;
+	margin: 25px auto;
+	overflow: hidden;
+}
+.btn-box
+{
+	 display: flex;
+	 border-bottom: 1px solid #ccc;
+}
+.btn-box button
+{
+	background: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer; 
+	padding: 14px 16px;
+	margin-right: 50px;
+	font-size: 20px;
+	font-weight: bold; 
+}
+.btn-box .fa
+{
+	margin-right: 20px;
+}
+.btn-box button:hover .fa
+{
+	color:red;
+}
+.content
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5% auto;
+	position: absolute;
+	transform: translateX(100%);
+	transition: .5s;
+}
+#content1
+{
+	transform: translateX(0px);
+}
+#btn1
+{
+	color:red;
+}
+.img-gallery 
+{
+	margin: 20px;
+	align-content: center;
+	text-align: center;
+}
+.img-gallery img
+{
+	width: 250px;
+	padding: 20px;
+	transition: .1s;
+}
+.img-gallery img:hover
+{
+	transform: scale(1.1);
+}
+
+@media (max-width: 1000px)
+{
+	.img-gallery img
+	{
+		width: 175px;
+		padding: 10px
+	}
+}
+
+
+
+@media (max-width: 500px)
+{
+	.img-gallery img
+	{
+		width: 130px;
+		padding: 10px
+	}
+}
+
+@media screen and (max-width: 1000px) and (min-width: 400px) 
+{
+	.img-gallery img
+	{
+		width: 140px;
+		padding: 10px
+	}
+}

@@ -1,0 +1,480 @@
+<html>
+<head>
+	<title>Travel Website</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width-deevice-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+*
+{
+	padding: 0;
+	margin: 0;
+}
+.header
+{
+	height: 100%;
+	background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(images/image1.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	padding-top: 20px;
+	text-align: center;
+	color:#fff;
+}
+.header img
+{
+	width: 100px;
+	height: 100px;
+	float: left;
+	cursor: pointer;
+	transition: .5s;
+	
+}
+.login-btn
+{
+	width: 100px;
+	padding:8px 0;
+	outline: none !important;
+	border:2px solid red;
+	border-radius: 50px;
+	background: rgb(255,0,0);
+    background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(253,45,45,1) 100%);
+	color:white;
+	float: right;
+	font-weight: bold;
+	transition: .5s;
+	box-shadow: 0px 0px 5px 1px red;
+}
+.header h1
+{
+	padding-top: 260px;
+	padding-bottom: 0;
+	font-size: 55px;
+}
+.header p
+{
+	margin: 18px 0px;
+}
+.input-group
+{
+	width: 90% !important;
+	max-width: 500px;
+	border-radius: 30px;
+	background:#fff;
+	margin: auto;
+	padding: 2px;
+
+}
+.form-control
+{
+	border: 0 !important;
+	border-radius: 30px 0 0 30px !important;
+	margin: 2px;
+	box-shadow: none !important; 
+}
+.input-group-text 
+{
+	width: 100px;
+	background: rgb(255,0,0);
+    background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(253,45,45,1) 100%);
+	border: 0 !important;
+	color:#fff !important;
+	padding: 0 25px !important;
+	border-radius: 30px !important;
+	box-shadow: none !important;
+
+}
+
+.features
+{
+	padding: 100px 0;
+}
+h1
+{
+	text-align: center;
+	padding-bottom: 30px;
+}
+.feature-img img
+{
+	width: 100%;
+	border-radius: 2%;
+	transition: .5s;
+}
+.price
+{
+	width: auto;
+	height: 35px;
+	background:red;
+	color: #fff;
+	font-weight: 600;
+	border-radius: 50%;
+	padding: 5px;
+	box-shadow: 0 0 10px 1px rgba(37,73,214,0.18);
+	position:absolute;
+	left: 2px;
+	bottom: 2px;
+}
+.feature-img
+{
+	position:relative;
+}
+.rating
+{
+	padding: 3px;
+	float: right;
+	background:none;
+	bottom: -1px;
+	right: 0;
+	position: absolute; 
+}
+.features .fa
+{
+	font-size: 15px;
+    color: red; 
+}
+.feature-details
+{
+	padding: 0px 20px 20px 20px;
+	text-align: justify;
+}
+.feature-details h4
+{
+	font-weight: 600;
+	margin-top: 20px;
+}
+.feature-details .fa
+{
+	margin-right: 5px;
+}
+.feature-box
+{
+	box-shadow: 0 0 10px 1px rgba(37,73,214,0.18);
+	margin-bottom: 30px;
+}
+.gallery
+{
+	padding: 100px 0;
+	background: #efefef;
+}
+.gallery-box img
+{
+	width: 100%;
+	height: 200px;
+	border-radius: 5%;
+	cursor: pointer;
+	transition: .5s;
+}
+.gallery-box img:hover, .feature-img img:hover, .login-btn:hover, .booking-btn:hover, .header img:hover
+{
+	transform: scale(1.1);
+} 
+.gallery-box h4
+{
+	display: block;
+	color:#fff;
+	text-shadow: -2px 2px 2px #000;
+	font-weight: 600;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+}
+.gallery-box 
+{
+	position: relative;
+	margin-bottom: 30px;
+}
+.banner
+{
+	height: 80%;
+	background-image: url(images/brazil.webp);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	padding-top: 10%;
+
+}
+.banner-highligths
+{
+	padding:70px 0;
+	background: rgba(0,0,0,0.7);
+	text-align: center;
+	color: #fff; 
+}
+.booking-btn
+{
+	width: 120px;
+	padding:8px 0;
+	outline: none !important;
+	border:2px solid red;
+	border-radius: 50px;
+	background: rgb(255,0,0);
+    background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(253,45,45,1) 100%);
+	color: #fff;
+	margin-top: 20px;
+	transition: .5s;
+	font-weight: bold;
+	box-shadow: 0px 0px 5px 1px red;
+}
+.users-feedback
+{
+	padding:100px 0;
+}
+.user-review
+{
+	text-align: center;
+	box-shadow: 0 0 10px 0 rgba(0,0,100,0.2);
+	padding-bottom: 50px;
+	border-radius: 10px;
+}
+.user-review p
+{
+	padding: 50px 20px;
+	text-align: justify;
+}
+.users-feedback img
+{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	position: relative;
+	margin: -30px 0 20px 40%;
+}
+.user-review p::before
+{
+	content: '\201d';
+	display:block;
+	position: absolute;
+	font-size: 100px;
+	color:#6495ed;
+	font-family: sans-serif;
+	left: 44%;
+	top: -20px;
+}
+.footer
+{
+	padding: 50px 20px 10px;
+	background-image: linear-gradient(#2d557d,#9610fb);
+	color:white;
+}
+.footer-logo
+{
+	width: 150px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.footer-logo
+{
+	width: 150px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.footer h4
+{
+	text-align: left;
+	margin-top: 15px;
+	margin-bottom: 25px;
+
+}
+.footer p
+{
+	font-size: 12px;
+	text-align: justify;
+	padding-right: 35px;
+}
+.footer .row .fa
+{
+	padding-right: 20px;
+	font-size: 15px;
+}
+.footer hr
+{
+	margin-top:10px;
+	background:#efefef;
+}
+.fa-heart
+{
+	margin: 0 5px;
+	color:#f44336;
+}
+.footer .copyright
+{
+	text-align: center;
+}
+.col-md-3 a
+{
+	text-decoration: none;
+	color:white;
+}
+
+</style>
+<body>
+	<section class="header">
+		<div class="container">
+			<img src="images/7logo.png">
+			<a href="login.html"><button type="button" class="login-btn">Login</button></a>
+		</div>
+		<div class="container">
+			
+			<a href="accounts/register"><button type="button" class="login-btn">Register</button></a>
+		</div>
+		<h1>Travel Across The Globe</h1>
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Search Country or City">
+			<div class="input-group-append">
+				<button type="submit" class="input-group-text btn">Search</button>
+			</div>
+		</div>
+		  
+	</section>
+	
+	<section class="features">
+		<h1>Featured Destinations</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="feature-box">
+						<div class="feature-img">
+							<img src="images/poland.webp">
+							<div class="price">
+								<p>&#8377;1,850</p>
+							</div>	
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-half-o"></i>
+								</div>
+							</div>
+							<div class="feature-details">
+								<h4>Poland</h4>
+								<p>Amazing and Extremely Central Flat</p>
+							
+							<span><i class="fa fa-map-marker"></i> Poland</span>
+							<span><i class="fa fa-sun-o"></i>1 Day</span>
+							<span><i class="fa fa-moon-o"></i>1 Night</span>
+							</div>
+						</div> 
+					</div>
+
+				
+
+				
+		</div>
+		<a href="#">Show More &#187;</a>
+	</section>
+	<section class="gallery">
+		<h1>Travelling Gallery</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="gallery-box">
+					   <img src="images/gallery1.jpg">
+					   <h4>Poland</h4>
+				    </div>
+				</div>
+				<div class="col-md-3">
+					<div class="gallery-box">
+					   <img src="images/gallery2.jpg">
+					   <h4>Indonesia</h4>
+				    </div>
+				</div>
+				<div class="col-md-3">
+					<div class="gallery-box">
+					   <img src="images/gallery3.jpg">
+					   <h4>Canada</h4>
+				    </div>
+				</div>
+				<div class="col-md-3">
+					<div class="gallery-box">
+					   <img src="images/gallery4.jpg">
+					   <h4>United States</h4>
+				    </div>
+				</div>
+			</div>
+			<a href="#">Show More &#187;</a>
+		</div>
+	</section>
+	<section class="banner">
+		<div class="banner-highligths">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<h2>Get 20% discount on top destinations</h2>
+						<p>Book your tickets before 31st March and avail 20% flat discount.</p>
+					</div>
+					<div class="col-md-4">
+						<button type="button" class="booking-btn">Book Now</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="users-feedback">
+		<h1>User's Review</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="user-review">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est vel mi eleifend finibus sed vitae nisi. Donec et.</p>
+						<h5>Sam</h5>
+						<small>Canada</small>
+					</div>
+					<img src="images/user1.jpg">
+				</div>
+				<div class="col-md-4">
+				<div class="user-review">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est vel mi eleifend finibus sed vitae nisi. Donec et.</p>
+						<h5>Julie</h5>
+						<small>United States</small>
+					</div>
+					<img src="images/user2.jpg">
+				</div>
+				<div class="col-md-4">
+		        <div class="user-review">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est vel mi eleifend finibus sed vitae nisi. Donec et.</p>
+						<h5>John</h5>
+						<small>Indonesia</small>
+					</div>
+					<img src="images/user3.jpg">
+				</div>
+				<a href="#">More Reviews &#187;</a>
+	</section>
+	<section class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<img src="images/7logo.png" class="footer-logo">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est vel mi eleifend finibus sed vitae nisi. Donec et.</p>
+				</div>
+				<div class="col-md-3">
+					<h4>Features</h4>
+					<a href="#"><p>Deals & Offers</p></a>
+					<a href="#"><p>Customer Reviews</p></a>
+					<a href="#"><p>Cancellation Policy</p></a>
+				</div>
+				<div class="col-md-3">
+					<h4>Quick Contact</h4>
+					 <a href="Tel:+917011661874"><p><i class="fa fa-phone-square"></i>701166XXXX</p></a>
+					 <a href="mailto:kumarsuraj345678@gmail.com"><p><i class="fa fa-envelope"></i>kumarsuraj345678@gmail.com</p></a>
+					 <a href="#"><p><i class="fa fa-home"></i>Address Here</p></a>
+				</div>
+				<div class="col-md-3">
+					<h4>Follow Us On</h4>
+					 <a href="https://www.facebook.com/"><p><i class="fa fa-facebook-official"></i>Facebook</p></a>
+					 <a href="https://www.youtube.com/"><p><i class="fa fa-youtube-play"></i>Youtube</p></a>
+					 <a href="https://www.twitter.com/"><p><i class="fa fa-twitter"></i>Twitter</p></a>
+				</div>
+			</div><hr>
+			<p class="copyright">Made with <i class="fa fa-heart"></i> by Rohit and Suraj</p>
+		</div>
+		
+	</section>
+
+</body>
+</html>

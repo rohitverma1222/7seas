@@ -1,0 +1,459 @@
+
+{% load static %}
+
+<html>
+<head>
+	<title>{% block title %}{{dests.name}} {% endblock %}</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+*
+{
+	padding: 0;
+	margin: 0;
+}
+.background
+{
+	background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url({% static 'images/image1.jpg' %});
+	width: auto;
+	height: 800px;
+	background-size: cover;
+	padding-top: 0px;
+}
+.navbar
+{
+	background-attachment: fixed;
+}
+.input-group
+{
+	width: 90% !important;
+	max-width: 300px;
+	border-radius: 30px;
+	background:#fff;
+	margin: auto;
+	padding: 2px;
+	margin-left: 10px;
+
+}
+.form-control
+{
+	border: 0 !important;
+	border-radius: 30px 0 0 30px !important;
+	margin: 2px;
+	box-shadow: none !important; 
+}
+.input-group-text 
+{
+	width: 100px;
+	background: rgb(255,0,0);
+    background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(253,45,45,1) 100%);
+	border: 0 !important;
+	color:#fff !important;
+	padding: 0 25px !important;
+	border-radius: 30px !important;
+	box-shadow: none !important;
+
+}
+.login-btn
+{
+	width: 100px;
+	padding:8px 0;
+	outline: none !important;
+	border:2px solid red;
+	border-radius: 50px;
+	background: rgb(255,0,0);
+    background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(253,45,45,1) 100%);
+	color:white;
+	float: right;
+	font-weight: bold;
+	transition: .5s;
+	box-shadow: 0px 0px 5px 1px red;
+	cursor: pointer;
+}
+.login-btn:hover, .booking-btn:hover
+{
+	transform: scale(1.1);
+}
+.btn
+{
+	width: 100px;
+	color:white;
+	border-radius: 30px;
+	border-color: 2px solid red;
+}
+h1
+{
+	text-align: center;
+	padding-bottom: 30px;
+}
+.users-feedback
+{
+	padding:100px 0;
+}
+.user-review
+{
+	text-align: center;
+	box-shadow: 0 0 10px 0 rgba(0,0,100,0.2);
+	padding-bottom: 50px;
+	border-radius: 10px;
+}
+.user-review p
+{
+	padding: 50px 20px;
+	text-align: justify;
+}
+.users-feedback img
+{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	position: relative;
+	margin: -30px 0 20px 40%;
+}
+.user-review p::before
+{
+	content: '\201d';
+	display:block;
+	position: absolute;
+	font-size: 100px;
+	color:#6495ed;
+	font-family: sans-serif;
+	left: 44%;
+	top: -20px;
+}
+.footer
+{
+	padding: 50px 20px 10px;
+	background: rgb(255,0,0);
+background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(0,14,255,1) 100%);
+	color:white;
+}
+.footer-logo
+{
+	width: 150px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.footer-logo
+{
+	width: 150px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.footer h4
+{
+	text-align: left;
+	margin-top: 15px;
+	margin-bottom: 25px;
+
+}
+.footer p
+{
+	font-size: 12px;
+	text-align: justify;
+	padding-right: 35px;
+}
+.footer .row .fa
+{
+	padding-right: 20px;
+	font-size: 15px;
+}
+.footer hr
+{
+	margin-top:10px;
+	background:#efefef;
+}
+.fa-heart
+{
+	margin: 0 5px;
+	color:#f44336;
+}
+.footer .copyright
+{
+	text-align: center;
+}
+.col-md-3 a
+{
+	text-decoration: none;
+	color:white;
+}
+.images-container
+{
+    position: absolute;
+    top:80%;
+    left:25%;
+
+    transform: translate(-50%,-50%);
+}
+ul.thumb
+{
+    margin: 0 auto;
+    padding: 0;
+    float: left;
+}
+ul.thumb li
+{
+    list-style: none;
+    margin: 5px;
+    width: 100px;
+    height: auto;
+    border: 2px solid red;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px 1px red;
+}
+ul.thumb li img
+{
+    width:100px;
+    height:100px;
+}
+.imgBox
+{
+    float: left;
+    width: auto;
+    height: 450px;
+    margin: 2px;
+    border: 1px solid red;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px 1px red;
+}
+.imgBox img
+{
+    width: 600px;
+     height: 450px;
+
+}
+.image-description 
+{
+	
+	position: absolute;
+	left:50%;
+	top: 37.5%;
+	background-color: #fff;
+	margin: 0 20px;
+	border-radius: 10px;
+	text-align: justify;
+	font-weight: 500;
+	box-shadow: 0px 0px 5px 1px red;
+	border: 2px solid red;
+    overflow: hidden;
+    padding: 20px 20px;
+}
+.image-description p
+{
+	padding: 3%;
+	font-size: 18px;
+	color: #000;
+
+}
+.image-description h4
+{
+	text-transform: uppercase;
+	font-size: 50px;
+	text-align: center;
+	font-weight: bold;
+	color: red;
+}
+.fa, span
+{
+	font-size: 18px;
+    color: red;
+}
+.booking-btn
+{
+	width: 120px;
+	padding:8px 0;
+	outline: none !important;
+	border:2px solid red;
+	border-radius: 50px;
+	background: rgb(255,0,0);
+    background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(253,45,45,1) 100%);
+	color: #fff;
+	margin-top: 20px;
+	transition: .5s;
+	font-weight: bold;
+	box-shadow: 0px 0px 5px 1px red;
+	position: relative;
+	left: 40%;
+}
+.price
+{
+	width: auto;
+	height: 35px;
+	background:red;
+	font-weight: 600;
+	border-radius: 10%;
+	padding: 5px;
+	box-shadow: 0 0 10px 1px rgba(37,73,214,0.18);
+	position:absolute;
+	bottom: 25%;
+	right: 6%;
+	line-height: 20px;
+
+}
+.price p
+{
+	color: #fff; 
+	padding: 3px;
+}
+.rating
+{
+	padding: 3px;
+	float: right;
+	background:none;
+	bottom: 35%;
+	right: 6%;
+	position: absolute; 
+}
+#onc{
+	height: 100px;
+	width: 100px;
+
+}
+
+</style>
+<body>
+<section>
+	<div class="background">
+		<div class="navbar">
+			<a href="/">
+			<img id ="onc" src="{% static 'images/7logo.png' %}">
+			</a>
+			<form action="/search/" method="GET">
+			<div class="input-group">
+			<input type="text" class="form-control" name="where" placeholder="Search Country or City">
+			
+			<div class="input-group-append">
+				<button type="submit" class="input-group-text btn">Search</button>
+			</div>
+
+		</form>
+
+		    </div>
+		  <ul>
+		  	{% if user.is_authenticated %}
+		  	<a href="logout"><button type="button" class="login-btn">Logout</button></a>
+		  	{% else %}
+		    <a href="login"><button type="button" class="login-btn">Log in</button></a>
+		  <a href="register"><button type="button" class="login-btn">sign up</button></a>
+		  {% endif %}
+		    <a href="/"><button type="button" class="login-btn">home</button></a>
+		    <a href="contact"><button type="button" class="login-btn">contact</button></a>
+		</ul>
+		</div>
+		<hr color="darkgrey">
+		<section>
+			{% block body %}
+				 <div class="images-container">
+    <ul class="thumb">
+        <li><a href="{{dests.img1.url}}" target="imgBox"><img src="{{dests.img1.url}}"></a></li>
+        <li><a href="{{dests.img2.url}}" target="imgBox"><img src="{{dests.img2.url}}"></a></li>
+        <li><a href="{{dests.img3.url}}" target="imgBox"><img src="{{dests.img3.url}}"></a></li>
+        <li><a href="{{dests.img4.url}}" target="imgBox"><img src="{{dests.img4.url}}"></a></li>
+    </ul>
+    
+    <div class="imgBox">
+        <img src="{{dests.img1.url}}">
+    </div>
+    
+   </div>
+ <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+   <script>
+     $(document).ready(function(){
+        $('.thumb a').mouseover(function(e){
+            e.preventDefault();
+        $('.imgBox img').attr("src", $(this).attr("href"));
+        })
+    })
+   </script>
+   
+   </section>
+   <section>
+   <div class="image-description">
+   	<h4><u>{{dests.name }}</u></h4>
+   	<p>{{dests.big_descrip}}<a href="#"> Read more...</a><br><br><span><i class="fa fa-map-marker"></i> {{dests.place_under}}</span></p>
+   	<div class="price">
+		<p>${{dests.price}}</p>
+	</div>	
+	<div class="rating">
+	     <i class="fa fa-star"></i>
+		 <i class="fa fa-star"></i>
+		 <i class="fa fa-star"></i>
+		 <i class="fa fa-star"></i>
+		 <i class="fa fa-star"></i>
+
+	</div>
+   	<button type="button" class="booking-btn">Book Now</button>
+
+   	</div>
+
+	</section>	
+	</div>
+</section>
+{% endblock %}
+<section class="users-feedback" id="users-feedback">
+		<h1>User's Review</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="user-review">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est vel mi eleifend finibus sed vitae nisi. Donec et.</p>
+						<h5>Sam</h5>
+						<small>Canada</small>
+					</div>
+					<img src="{% static 'images/user1.jpg' %}">
+				</div>
+				<div class="col-md-4">
+				<div class="user-review">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est vel mi eleifend finibus sed vitae nisi. Donec et.</p>
+						<h5>Julie</h5>
+						<small>United States</small>
+					</div>
+					<img src="{% static 'images/user2.jpg' %}">
+				</div>
+				<div class="col-md-4">
+		        <div class="user-review">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est vel mi eleifend finibus sed vitae nisi. Donec et.</p>
+						<h5>John</h5>
+						<small>Indonesia</small>
+					</div>
+					<img src="{% static 'images/user3.jpg' %}">
+				</div>
+				<a href="#">More Reviews &#187;</a>
+	</section>
+	<section class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<img src="{% static 'images/7logo.png' %}" class="footer-logo">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est vel mi eleifend finibus sed vitae nisi. Donec et.</p>
+				</div>
+				<div class="col-md-3">
+					<h4>Features</h4>
+					<a href="#"><p>Deals & Offers</p></a>
+					<a href="#users-feedback"><p>Customer Reviews</p></a>
+					<a href="#"><p>Cancellation Policy</p></a>
+				</div>
+				<div class="col-md-3">
+					<h4>Quick Contact</h4>
+					 <a href="Tel:+917011661874"><p><i class="fa fa-phone-square"></i>701166XXXX</p></a>
+					 <a href="mailto:kumarsuraj345678@gmail.com"><p><i class="fa fa-envelope"></i>kumarsuraj345678@gmail.com</p></a>
+					 <a href="#"><p><i class="fa fa-home"></i>Address Here</p></a>
+				</div>
+				<div class="col-md-3">
+					<h4>Follow Us On</h4>
+					 <a href="https://www.facebook.com/"><p><i class="fa fa-facebook-official"></i>Facebook</p></a>
+					 <a href="https://www.youtube.com/"><p><i class="fa fa-youtube-play"></i>Youtube</p></a>
+					 <a href="https://www.twitter.com/"><p><i class="fa fa-twitter"></i>Twitter</p></a>
+				</div>
+			</div><hr>
+			<p class="copyright">Made with <i class="fa fa-heart"></i> by Rohit and Suraj</p>
+		</div>
+		
+	</section>
+</body>
+</html>

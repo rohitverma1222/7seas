@@ -1,0 +1,255 @@
+{% load static %}
+<html>
+<head>
+	<title>Travel Website</title>
+	<link rel="stylesheet" href="{% static 'index_style.css' %}">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width-device-width" initial-scale="1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'allmin.css' %}">
+	
+</head>
+<body>
+	<header>
+	<nav class="nav-bar">
+
+		<a href="#" class="brand-nav"><img src="{% static 'images/7logo.png' %}"></a>
+
+		<div class="toggler-nav">
+			<div class="bar" id="bar1"></div>
+			<div class="bar" id="bar2"></div>
+			<div class="bar" id="bar3"></div>
+		</div>
+		<div class="main-nav">
+			<ul>
+				<li><a href="/" class="active">home</a></li>
+				<li><a href="gallery">Gallery</a></li>
+				<li><a href="contact">Contact us</a></li>
+
+		
+		{% if user.is_authenticated %}
+	
+				<a href="accounts/logout" class="btn1 sign_up" >logout</a>
+		
+				{% else %}
+		
+			<li><a  href="register" class="btn1 sign_up">Sign up</a></li>
+			<li><a  href="login" class="btn1 log_in">Log In</a></li>
+		</div>
+{% endif %}
+</ul>
+	</nav>
+
+
+	<section class="header"> 
+	<h1>Travel Across The Globe</h1>
+			<form action="search" method="GET">
+	<div class="input-group">
+	<input type="text" class="form-control" placeholder="Search" name="where">
+	<div class="input-group-append">
+	<button type="submit" class="input-group-text btn2">Search</button>
+	</div>
+	</div>
+	</form>
+	</section>
+
+</header>
+	<section class="features">
+		<h1>Featured Destinations</h1>
+
+
+		<div class="container">
+			<div class="row">
+				{% for des in dests%}
+				<div class="col-md-4">
+					
+					<div class="feature-box">
+
+						<div class="feature-img">
+							<img src="{{des.img1.url}}">
+							<div class="price">
+								<p>${{des.price}}</p>
+							</div>	
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star-half-o"></i>
+								</div>
+							</div>
+							<div class="feature-details">
+								
+								<h4 ><a href="sum{{des.id}}" >{{des.name}}</a></h4> 
+								<p>{{des.descrip}}</p>
+							
+							<span><i class="fa fa-map-marker"></i> {{des.place_under}}</span>
+							<span><i class="fa fa-sun-o"></i>{{des.total_day}} Day</span>
+							<span><i class="fa fa-moon-o"></i>{{des.total_night}} Night</span>
+							</div>
+						</div> 
+						
+					</div>
+					{% endfor %}
+
+				
+
+				
+		</div>
+	
+	
+		<a href="#">Show More &#187;</a>
+
+
+		
+	</section>
+	<section class="gallery">
+		<h1>Travelling Gallery</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="gallery-box">
+					   <img src="{% static 'images/gallery1.jpg' %}">
+					   <a href="gallery"><h4>Poland</h4></a>
+				    </div>
+				</div>
+				<div class="col-md-3">
+					<div class="gallery-box">
+					   <img src="{% static 'images/gallery2.jpg' %}">
+					  <a href="gallery"> <h4>Indonesia</h4></a>
+				    </div>
+				</div>
+				<div class="col-md-3">
+					<div class="gallery-box">
+					   <img src="{% static 'images/gallery3.jpg' %}">
+					  <a href="gallery"> <h4>Canada</h4></a>
+				    </div>
+				</div>
+				<div class="col-md-3">
+					<div class="gallery-box">
+					   <img src="{% static 'images/gallery4.jpg' %}">
+					  <a href="gallery"> <h4>United States</h4></a>
+				    </div>
+				</div>
+			</div>
+			
+		</div>
+	</section>
+	<section class="banner">
+		<div class="banner-highligths">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<h2>Get 20% discount on top destinations</h2>
+						<p>Book your tickets before 31st March and avail 20% flat discount.</p>
+					</div>
+					<div class="col-md-4">
+						<button type="button" class="booking-btn">Book Now</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="users-feedback" id="users-feedback">
+		<h1>User's Review</h1>
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-4">
+					<div class="user-review">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est vel mi eleifend finibus sed vitae nisi. Donec et.</p>
+						<h5>Sam</h5>
+						<small>Canada</small>
+					</div>
+					<img src="{% static 'images/user1.jpg' %}">
+				</div>
+				<div class="col-md-4">
+				<div class="user-review">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est vel mi eleifend finibus sed vitae nisi. Donec et.</p>
+						<h5>Julie</h5>
+						<small>United States</small>
+					</div>
+					<img src="{% static 'images/user2.jpg' %}">
+				</div>
+				<div class="col-md-4">
+		        <div class="user-review">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est vel mi eleifend finibus sed vitae nisi. Donec et.</p>
+						<h5>John</h5>
+						<small>Indonesia</small>
+					</div>
+					<img src="{% static 'images/user3.jpg' %}">
+				</div>
+				
+	</section>
+	<section class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<img src="{% static 'images/7logo.png' %}" class="footer-logo">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra est vel mi eleifend finibus sed vitae nisi. Donec et.</p>
+				</div>
+				<div class="col-md-3">
+					<h4>Features</h4>
+					<a href="#"><p>Deals & Offers</p></a>
+					<a href="#users-feedback"><p>Customer Reviews</p></a>
+					<a href="#"><p>Cancellation Policy</p></a>
+				</div>
+				<div class="col-md-3">
+					<h4>Quick Contact</h4>
+					 <a href="Tel:+917011661874"><p><i class="fa fa-phone-square"></i>701166XXXX</p></a>
+					 <a href="mailto:kumarsuraj345678@gmail.com"><p><i class="fa fa-envelope"></i>kumarsuraj345678@gmail.com</p></a>
+					 <a href="#"><p><i class="fa fa-home"></i>Address Here</p></a>
+				</div>
+				<div class="col-md-3">
+					<h4>Follow Us On</h4>
+					 <a href="https://www.facebook.com/"><p><i class="fa fa-facebook-official"></i>Facebook</p></a>
+					 <a href="https://www.youtube.com/"><p><i class="fa fa-youtube-play"></i>Youtube</p></a>
+					 <a href="https://www.twitter.com/"><p><i class="fa fa-twitter"></i>Twitter</p></a>
+				</div>
+			</div><hr>
+			<p class="copyright">Made with <i class="fa fa-heart"></i> by Rohit and Suraj</p>
+		</div>
+		
+	</section>
+	<script>
+  
+
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+var x = document.getElementById("login");
+      var y = document.getElementById("register");
+      var z = document.getElementById("btn");
+      function register()
+      {
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+      }
+      function login()
+      {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0px";
+      }
+      
+</script>
+<script type="text/javascript" src="{% static 'jquery-3.4.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'all.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'script.js' %}"></script>
+
+</body>
+</html>
